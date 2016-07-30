@@ -5,7 +5,7 @@ Go wrapper for [Graphcommons](https://graphcommons.github.io/api-v1/) API.
 ## Installation
 
 ```
-go get graphcommons
+go get github.com/erkanay/graphcommons-go
 ```
 
 ## Usage
