@@ -12,7 +12,7 @@ go get graphcommons
 
 #### Authentication
 ```go
-gc, _ := GraphCommons("API_KEY")
+gc, _ := graphcommons.GraphCommons("API_KEY")
 resp := gc.Status()
 fmt.Println(resp) // {"msg":"Working"}
 
