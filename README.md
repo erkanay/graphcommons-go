@@ -12,7 +12,9 @@ go get github.com/erkanay/graphcommons-go
 
 #### Authentication
 ```go
-gc, _ := graphcommons.GraphCommons("API_KEY")
+import . "github.com/erkanay/graphcommons-go"
+
+gc, _ := GraphCommons("API_KEY")
 resp := gc.Status()
 fmt.Println(resp) // {"msg":"Working"}
 
@@ -21,21 +23,21 @@ fmt.Println(resp) // {"msg":"Working"}
 #### New Graph
 ```go
 body := Graph{
-	Name: "Go graph",
-	Description: "Go wrapper helps to create graph",
-	Status: 1,
-	Subtitle: "Graphcommons-go",
-	Signals: []Signal{
-	    Signal{
-	        "edge_create",
-	        "Erkan",
-	        "Person",
-	        "Maximé",
-	        "Person",
-	        "COLLABORATED",
-	        1,
-	    },
-	},
+    Name: "Go graph",
+    Description: "Go wrapper helps to create graph",
+    Status: 1,
+    Subtitle: "Graphcommons-go",
+    Signals: []Signal{
+        Signal{
+            Action: "edge_create",
+            FromName: "Erkan",
+            FromType: "Person",
+            ToName: "Maximé",
+            ToType: "Person",
+            Name:"COLLABORATED",
+            Weight: 1,
+        },
+    },
 }
 resp := gc.CreateGraph(body)
 ```
@@ -53,29 +55,29 @@ type Signals struct{
 body := Signals{
     Signals: []Signal{
         Signal{
-            "edge_create",
-            "Aude",
-            "Person",
-            "Maximé",
-            "Person",
-            "COLLABORATED",
-            1,
+            Action: "edge_create",
+            FromName: "Aude",
+            FromType: "Person",
+            ToName: "Maximé",
+            ToType: "Person",
+            Name: "COLLABORATED",
+            Weight: 1,
         },
         Signal{
-            "edge_create",
-            "Kosta",
-            "Person",
-            "Bogdan",
-            "Person",
-            "COLLABORATED",
-            1,
+            Action: "edge_create",
+            FromName: "Kosta",
+            FromType: "Person",
+            ToName: "Bogdan",
+            ToType: "Person",
+            Name: "COLLABORATED",
+            Weight: 1,
         },
     },
 }
-resp := gc.UpdateGraph("49ef5458-ab17-40b2-b702-2ccad3ced756", body)
+resp := gc.UpdateGraph("49beddc2-9616-409e-83aa-dd34335c69ee", body)
 ```
 
 #### Delete Graph
 ```go
-resp := gc.DeleteGraph("49ef5458-ab17-40b2-b702-2ccad3ced756")
+resp := gc.DeleteGraph("49beddc2-9616-409e-83aa-dd34335c69ee")
 ```
