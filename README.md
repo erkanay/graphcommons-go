@@ -44,7 +44,7 @@ resp := gc.CreateGraph(body)
 
 #### Get Graph
 ```go
-resp := gc.Graphs("49ef5458-ab17-40b2-b702-2ccad3ced756")
+resp := gc.Graphs("49beddc2-9616-409e-83aa-dd34335c69ee")
 ```
 
 #### Update Graph
@@ -76,6 +76,8 @@ body := Signals{
 }
 resp := gc.UpdateGraph("49beddc2-9616-409e-83aa-dd34335c69ee", body)
 ```
+
+Constituted graph is [here](https://graphcommons.com/graphs/49beddc2-9616-409e-83aa-dd34335c69ee).
 
 #### Delete Graph
 ```go
